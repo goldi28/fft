@@ -1,0 +1,22 @@
+clc;
+clear all;
+f1=10;
+fs=100;
+n=[0:29];
+x=sin(2*pi*(f1/fs)*n);
+n1=512;
+n2=1024;
+n3=2048;
+y1=abs(fft(x,n1));
+y2=abs(fft(x,n2));
+y3=abs(fft(x,n3));
+F1=0:fs/n1:(fs-fs/n1);
+f2=0:fs/n2:(fs-fs/n2);
+f3=0:fs/n3:(fs-fs/n3);
+subplot(3,1,1);
+plot(F1,y1);
+subplot(3,1,2);
+plot(f2,y2,'-x');
+subplot(3,1,3);
+plot(f3,y3,'-x');
+
